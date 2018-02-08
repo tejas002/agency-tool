@@ -1,0 +1,82 @@
+<section>
+    <br>
+    <div class="col-md-10">
+        <form name="vm.form.uploadForm" class="form-horizontal" ng-submit="vm.save(vm.form.uploadForm.$valid)" novalidate>
+            <div class="form-group" show-errors>
+                <div class="row">
+                    <div class="col-sm-2">
+                        <label class="control-label" for="name">Name</label>
+                    </div>
+                    <div class="col-sm-4">
+                        <input name="name" type="text" ng-model="vm.upload.name" id="name" class="form-control" placeholder="Name" ng-change="vm.progress()"
+                            required>
+                        <div ng-messages="vm.form.uploadForm.name.$error" role="alert">
+                            <p class="help-block error-text" ng-message="required">Upload name is required.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" show-errors>
+                <div class="row">
+                    <div class="col-sm-2">
+                        <label class="control-label" for="description">Description</label>
+                    </div>
+                    <div class="col-sm-4">
+                        <textarea name="description" type="text" ng-model="vm.upload.description" id="Description" placeholder="Description" class="form-control"
+                            ng-change="vm.progress()" required>	</textarea>
+                        <div ng-messages="vm.form.uploadForm.description.$error" role="alert">
+                            <p class="help-block error-text" ng-message="required">Description is required.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group" show-errors>
+
+                    <div class="col-sm-2">
+                        <label class="control-label" for="upload">Upload File</label>
+                    </div>
+                    <div class="col-sm-4">
+                        <input type="text" disabled name="upload" id="upload" ng-model="vm.urlUploadFile.name" class="form-control" id="fileName"
+                            required>
+                        <div ng-messages="vm.form.uploadForm.upload.$error" role="alert">
+                            <p class="help-block error-text" ng-message="required">File is required.</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <label class="btn btn-primary" for="my-file-selector">
+                            <input id="my-file-selector" type="file" file-model="vm.urlUploadFile" style="display:none;" onchange="angular.element(this).scope().check(this)"
+                                accept="image/*,.txt,.csv, text/csv"> Select File
+                        </label>
+                    </div>
+
+                </div>
+
+                <div ng-if="vm.infoMessage">
+                    <span class="col-sm-10 col-sm-offset-2 alert alert-danger" style="margin-bottom:7px">
+                        <p ng-repeat="err in vm.csverrors" style="word-wrap: break-word;">{{err}}</p>
+                    </span>
+                    <span class="col-sm-10 col-sm-offset-2 alert alert-info">
+                        <strong ng-bind="vm.info"></strong>
+                    </span>
+                </div>
+
+            </div>
+            <!-- <uib-progressbar value="requirementsProgressbar" type="{{requirementsColor}}"><span style="color:white; white-space:nowrap;">{{requirementsProgress}}%</span></uib-progressbar> -->
+
+            <div class="progress">
+                <div class="progress-bar" ng-style="{ 'width': [vm.upload.progressPercentage] + '%' }">
+                    <span>{{vm.upload.progressPercentage}}% Complete</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <!-- <a class="btn btn-primary" ng-click="vm.savedata()" ng-disabled="vm.upload.progressPercentage=='100'">Save</a> -->
+                <button type="submit" class="btn btn-primary">Create</button>
+            </div>
+            <div ng-show="vm.error" class="text-danger">
+                <strong ng-bind="vm.error"></strong>
+            </div>
+        </form>
+    </div>
+</section>

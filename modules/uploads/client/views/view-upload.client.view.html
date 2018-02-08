@@ -1,0 +1,51 @@
+<section>
+    <div class="row">
+        <div class="col-sm-12">
+            <h2 style="word-wrap: break-word" data-ng-bind="vm.upload.name"></h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-2"> <small><label class="control-label" for="name">Description</label></small> </div>
+        <div class="col-sm-10"> <small><label class="control-label" for="name" data-ng-bind="vm.upload.description"></label></small> </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-2"> <small><label class="control-label" for="desc">File</label></small> </div>
+        <div class="col-sm-10"> <small><a target="_blank" ng-href="{{vm.upload.uploadUrl}}">Click to download the file</a></small> </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-2"> <small><label class="control-label" for="name">Status </label></small> </div>
+        <div class="col-sm-4"> <small><label class="control-label" for="name" ng-bind="vm.upload.jobstatus"</label></small> </div>
+    </div>
+    <style>
+        .modal-dialog {
+            overflow-y: initial
+        }
+        
+        .modal-body {
+            height: 250px;
+            overflow-y: auto;
+        }
+        
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            padding: 1px;
+        }
+        
+        table {
+            border-collapse: collapse;
+            margin: 1px solid black;
+        }
+    </style> <small>
+    <em class="text-muted">
+      Posted on
+      <span data-ng-bind="vm.upload.created | date:'mediumDate'"></span>
+      by
+      <span data-ng-if="vm.upload.user"
+            data-ng-bind="vm.upload.user.displayName"></span>
+      <span data-ng-if="!vm.upload.user">Guest User</span>
+    </em>
+  </small>
+    <p class="lead" data-ng-bind="vm.upload.content"></p>
+</section>
