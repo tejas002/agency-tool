@@ -5,9 +5,9 @@
     .module('core')
     .controller('HomeController', HomeController);
 
-  HomeController.$inject = ['$scope','$state', 'Authentication', '$timeout', 'AdminService'];
+  HomeController.$inject = ['$scope', '$state', 'Authentication', '$timeout', 'AdminService'];
 
-  function HomeController($scope,$state, Authentication, $timeout, AdminService) {
+  function HomeController($scope, $state, Authentication, $timeout, AdminService) {
     var vm = this;
     vm.user = Authentication.user;
     //console.log(vm.user)
@@ -22,11 +22,11 @@
     }, 3000);
 
     vm.getuserstat = function (id) {
-      console.log(id)
-     AdminService.get({
+
+      AdminService.get({
         userId: id
-      },function(userdetails){
-        vm.user.projects=userdetails.projects
+      }, function (userdetails) {
+        vm.user.projects = userdetails.projects
         $state.reload();
       })
     }
