@@ -1,0 +1,35 @@
+<section>
+  <div class="page-header">
+    <div class="row">
+      <div class="col-md-4">
+        <h1>Users</h1>
+      </div>
+      <div class="col-md-4" style="margin-top: 2em">
+        <input class="form-control col-md-4" type="text" ng-model="vm.search" placeholder="Search" ng-change="vm.figureOutItemsToDisplay()"
+        />
+      </div>
+      <div class="col-md-4" style="margin-top: 26px;">
+        <a class="btn btn-primary btn-sm" ng-click="vm.refreshdata()">
+          <i class="glyphicon glyphicon-edit"></i> Refresh
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="list-group">
+    <a ng-repeat="user in vm.pagedItems" ui-sref="admin.user({userId: user._id})" class="list-group-item">
+      <h4 class="list-group-item-heading" ng-bind="user.username"></h4>
+      <p class="list-group-item-text pull-right small" ng-bind="user.roles"></p>
+      <p class="list-group-item-text" ng-bind="user.email"></p>
+      <p class="list-group-item-text pull-left small" ng-if="user.projects.length==0">Allocate Project -&nbsp; </p>
+      <p class="list-group-item-text pull-left small" ng-if="user.projects.length==0" ng-bind="user.projects.length==0?'Pending':'Approved'" ng-style="user.projects.length==0 && {'background-color':'Salmon'} || {'background-color':'lightblue'}"></p>
+      <br ng-if="user.projects.length==0" />
+      <p class="list-group-item-text pull-left small">Project Submission-&nbsp; </p>
+      <p class="list-group-item-text pull-left small" ng-bind="user.status?user.status:'Pending'" ng-style="user.status === 'Completed' && {'background-color':'lightblue'}  ||  {'background-color':'Salmon'}"></p>
+      <br/>
+
+    </a>
+  </div>
+
+  <uib-pagination boundary-links="true" max-size="8" items-per-page="vm.itemsPerPage" total-items="vm.filterLength" ng-model="vm.currentPage"
+    ng-change="vm.pageChanged()"></uib-pagination>
+</section>

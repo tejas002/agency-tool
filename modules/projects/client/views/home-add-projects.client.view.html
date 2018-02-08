@@ -1,0 +1,19 @@
+<div style="margin-top:10px; padding:0px;">
+
+    <ul class="nav nav-tabs">
+        <li ui-sref-active="active" role="presentation">
+            <a data-toggle="tab" data-target="#menu1" ui-sref=".create">Add Projects</a>
+        </li>
+        <li ui-sref-active="active" role="presentation">
+            <a data-toggle="tab" data-target="#menu1" ui-sref=".list">View Projects</a>
+        </li>
+
+    </ul>
+    <div class="container well child-tabs">
+        <div id="menu1" class="tab-pane fade in active">
+
+            <div ui-view></div>
+
+        </div>
+    </div>
+</div>
