@@ -49,8 +49,8 @@
 
         return false;
       }
-      
-      vm.user.lastLoggedOnProject = vm.user.projects[0];
+      //console.log(vm.user.projects)
+      vm.user.lastLoggedOnProject = vm.user.projects;
 
       var user = vm.user;
       

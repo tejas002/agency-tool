@@ -33,7 +33,7 @@
         <div class="form-group" show-errors>
             <label class="control-label" for="projects">Project</label>
             <div class="controls">
-              <select name="projects" class="form-control" ng-model="vm.user.projects" multiple required>
+              <select name="projects" class="form-control" ng-model="vm.user.projects" required>
                         <option ng-repeat="proj in vm.projects" value="{{proj._id}}">{{proj.projectName}}</option>
               </select>
               <div ng-messages="vm.userForm.projects.$error" role="alert">
