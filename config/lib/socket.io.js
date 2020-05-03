@@ -71,8 +71,8 @@ module.exports = function (app, db) {
 
   // Create a MongoDB storage object
   var mongoStore = new MongoStore({
-    db: db,
-    collection: config.sessionCollection
+    mongooseConnection: db,
+    dbName: config.sessionCollection
   });
 
   // Intercept Socket.io's handshake request
