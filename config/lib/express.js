@@ -118,8 +118,8 @@ module.exports.initSession = function (app, db) {
     },
     name: config.sessionKey,
     store: new MongoStore({
-      db: db,
-      collection: config.sessionCollection
+      mongooseConnection: db,
+      dbName: config.sessionCollection
     })
   }));
 
@@ -149,7 +149,7 @@ module.exports.initHelmetHeaders = function (app) {
   app.use(helmet.ieNoOpen());
   app.use(helmet.hsts({
     maxAge: SIX_MONTHS,
-    includeSubdomains: true,
+    // includeSubdomains: true,
     force: true
   }));
   app.disable('x-powered-by');
