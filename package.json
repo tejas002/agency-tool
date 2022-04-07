@@ -35,7 +35,7 @@
   "dependencies": {
     "acl": "^0.4.11",
     "amazon-s3-uri": "0.0.3",
-    "async": "~3.2.0",
+    "async": "~3.2.2",
     "aws-sdk": "^2.668.0",
     "body-parser": "^1.19.0",
     "bower": "^1.8.8",
@@ -92,7 +92,7 @@
     "serve-favicon": "^2.5.0",
     "socket.io": "^2.3.0",
     "validator": "~13.0.0",
-    "winston": "~3.2.1",
+    "winston": "~3.3.0",
     "wiredep": "~4.0.0"
   },
   "devDependencies": {
