@@ -52,7 +52,7 @@
     "generate-password": "~1.5.1",
     "glob": "~7.1.6",
     "gulp": "~4.0.2",
-    "gulp-angular-templatecache": "~3.0.0",
+    "gulp-angular-templatecache": "~3.0.1",
     "gulp-autoprefixer": "~7.0.1",
     "gulp-concat": "~2.6.1",
     "gulp-csslint": "~1.0.1",
