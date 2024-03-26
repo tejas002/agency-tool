@@ -46,7 +46,7 @@
     "cookie-parser": "~1.4.5",
     "del": "~5.1.0",
     "eslint-config-airbnb": "~6.0.2",
-    "express": "^4.17.1",
+    "express": "^4.19.2",
     "express-hbs": "~2.3.3",
     "express-session": "^1.17.1",
     "generate-password": "~1.5.1",
