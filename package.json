@@ -51,7 +51,7 @@
     "express-session": "^1.17.1",
     "generate-password": "~1.5.1",
     "glob": "~7.1.6",
-    "gulp": "~4.0.2",
+    "gulp": "~5.0.0",
     "gulp-angular-templatecache": "~3.0.0",
     "gulp-autoprefixer": "~7.0.1",
     "gulp-concat": "~2.6.1",
@@ -90,7 +90,7 @@
     "passport-twitter": "~1.0.4",
     "run-sequence": "~2.2.1",
     "serve-favicon": "^2.5.0",
-    "socket.io": "^2.3.0",
+    "socket.io": "^4.8.0",
     "validator": "~13.0.0",
     "winston": "~3.2.1",
     "wiredep": "~4.0.0"
